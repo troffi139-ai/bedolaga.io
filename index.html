@@ -5,123 +5,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🌸 BEDOLAGA.IO 🌸</title>
     <style>
+        /* Весь фон сайта — нежный розовый градиент */
         body {
             margin: 0;
             padding: 0;
-            background: url('https://i.ibb.co/L6m08zV/photo-2026-02-21-12-26-07.jpg') no-repeat center center fixed;
-            background-size: cover;
+            background: linear-gradient(135deg, #fff0f5 0%, #ffdee9 100%);
             font-family: 'Segoe UI', Tahoma, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            overflow-x: hidden;
+            color: #d81b60;
         }
 
-        /* Затемнение фона */
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(255, 192, 203, 0.1); 
-            z-index: 1;
-        }
-
-        /* Аниме персонажи */
-        .character {
-            position: fixed;
-            bottom: 0;
-            height: 70vh;
-            z-index: 2;
-            pointer-events: none;
-            transition: opacity 0.3s;
-        }
-        .left-girl { left: -30px; }
-        .right-girl { right: -30px; transform: scaleX(-1); }
-
+        /* Основная белая карточка */
         .main-card {
-            background: rgba(255, 255, 255, 0.93);
+            background: white;
             width: 90%;
-            max-width: 800px;
-            padding: 40px;
-            border-radius: 40px;
-            border: 6px solid #ffb6c1;
-            box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3);
+            max-width: 700px;
+            padding: 30px;
+            border-radius: 30px;
+            border: 4px solid #ffb6c1;
+            box-shadow: 0 15px 35px rgba(255, 182, 193, 0.4);
             text-align: center;
-            z-index: 10;
-            position: relative;
-            backdrop-filter: blur(8px);
             margin: 20px;
         }
 
         h1 { 
-            font-size: clamp(2rem, 8vw, 3.5rem); /* Размер подстраивается под экран */
+            font-size: clamp(1.8rem, 6vw, 2.8rem);
             color: #ff69b4; 
-            margin: 0 0 10px 0; 
-            text-shadow: 2px 2px 0px #fff;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         .subtitle {
-            font-size: clamp(1rem, 4vw, 1.3rem);
-            color: #ad1457;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        /* Блоки с текстом */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
             margin-bottom: 25px;
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Авто-колонки */
-            gap: 20px;
-        }
-
         .box {
-            background: #fff;
+            background: #fff5f8;
             padding: 20px;
-            border-radius: 25px;
+            border-radius: 20px;
             border: 2px dashed #ffb6c1;
             text-align: left;
         }
 
-        .box h3 { margin: 0 0 10px 0; color: #ff1493; font-size: 1.3rem; }
-        .box p { font-size: 1rem; color: #ad1457; line-height: 1.4; margin: 0; }
+        .box h3 { 
+            margin: 0 0 10px 0; 
+            color: #ff1493; 
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
 
+        .box p { 
+            font-size: 0.95rem; 
+            line-height: 1.5; 
+            margin: 0;
+        }
+
+        /* Кнопка — ярко-розовая */
         .btn {
             display: inline-block;
-            margin-top: 30px;
-            padding: clamp(15px, 4vw, 22px) clamp(30px, 8vw, 60px);
-            background: linear-gradient(45deg, #ff69b4, #ff1493);
+            padding: 18px 40px;
+            background: #ff69b4;
             color: white !important;
             text-decoration: none;
-            border-radius: 100px;
-            font-size: clamp(1.2rem, 5vw, 1.7rem);
+            border-radius: 50px;
+            font-size: 1.4rem;
             font-weight: bold;
             transition: 0.3s;
-            box-shadow: 0 10px 25px rgba(255, 20, 147, 0.4);
-            border: 3px solid #fff;
+            box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
+            border: none;
+            cursor: pointer;
         }
 
-        .btn:hover { transform: scale(1.05); }
-
-        .footer { margin-top: 25px; font-size: 0.8rem; color: #ff8da1; font-weight: bold; }
-
-        /* Специальные настройки для ТЕЛЕФОНОВ */
-        @media (max-width: 1000px) {
-            .character { 
-                opacity: 0.3; /* Делаем прозрачными, чтобы не мешали тексту */
-                height: 50vh; 
-            }
+        .btn:hover { 
+            background: #ff1493;
+            transform: scale(1.03);
         }
 
-        @media (max-width: 600px) {
-            .character { display: none; } /* Совсем убираем на маленьких экранах */
-            .main-card { padding: 25px 15px; border-radius: 30px; }
-            h1 { margin-bottom: 5px; }
+        .footer { 
+            margin-top: 25px; 
+            font-size: 0.8rem; 
+            color: #ffb6c1; 
+            font-weight: bold;
+        }
+
+        /* Настройка для очень маленьких экранов */
+        @media (max-width: 480px) {
+            .main-card { padding: 20px; }
+            h1 { font-size: 1.6rem; }
         }
     </style>
 </head>
 <body>
-
-    <img src="https://www.pngarts.com/files/10/Anime-Girl-PNG-Photo.png" class="character left-girl">
-    <img src="https://www.pngarts.com/files/10/Anime-Girl-Download-Transparent-PNG-Image.png" class="character right-girl">
 
     <div class="main-card">
         <h1>🌸 BEDOLAGA.IO 🌸</h1>
@@ -130,15 +120,15 @@
         <div class="grid">
             <div class="box">
                 <h3>🤖 НАШ БОТ</h3>
-                <p>Наш бот занимается эвакуациями школ! Если тебя буллят или у тебя контрольная — просто эвакуируй её!</p>
+                <p>Наш бот занимается эвакуациями школ! Если тебя буллят в школе или у тебя контрольная и ты не хочешь идти — просто эвакуируй её!</p>
             </div>
             <div class="box">
                 <h3>🔐 ПРИВАТНОСТЬ</h3>
-                <p>Мы гарантируем полную анонимность. Твои данные защищены, а использование бота останется секретом.</p>
+                <p>Мы гарантируем полную анонимность. Твои данные защищены, а использование бота останется в секрете от всех.</p>
             </div>
         </div>
 
-        <a href="https://t.me/+WWiyT82gDLs5YzQy" class="btn">🎀 ВОЙТИ В КАНАЛ 🎀</a>
+        <a href="https://t.me/+WWiyT82gDLs5YzQy" class="btn">ВОЙТИ В КАНАЛ</a>
 
         <div class="footer">
             CREATED FOR BEDOLAGAS WITH LOVE 💞 2026
