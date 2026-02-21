@@ -8,8 +8,8 @@
         body {
             margin: 0;
             padding: 0;
-            /* Тот самый розовый фон из чата */
-            background: url('https://i.ibb.co/L6m08zV/photo-2026-02-21-12-26-07.jpg') no-repeat center center fixed;
+            /* Фон: Розовое облачное небо (классика аниме) */
+            background: url('https://i.pinimg.com/originals/02/76/8a/02768a487900898555e145f492160a03.jpg') no-repeat center center fixed;
             background-size: cover;
             font-family: 'Segoe UI', Tahoma, sans-serif;
             display: flex;
@@ -19,8 +19,8 @@
             overflow: hidden;
         }
 
-        /* Контейнер для девочек, чтобы они были ПОВЕРХ фона, но ПОД карточкой */
-        .anime-layer {
+        /* Слой с персонажами, которые стоят по бокам ПОВЕРХ фона */
+        .characters {
             position: fixed;
             top: 0;
             left: 0;
@@ -32,31 +32,25 @@
 
         .girl {
             position: absolute;
-            bottom: 0;
-            height: 80vh; /* Размер как на фото */
+            bottom: -20px;
+            height: 80vh;
         }
 
-        .left-girl {
-            left: 0;
-        }
-
-        .right-girl {
-            right: 0;
-            transform: scaleX(-1); /* Отражаем вторую девочку */
-        }
+        .left-side { left: -50px; }
+        .right-side { right: -50px; transform: scaleX(-1); }
 
         .main-card {
-            background: rgba(255, 255, 255, 0.92);
+            background: rgba(255, 255, 255, 0.9);
             width: 90%;
             max-width: 800px;
             padding: 40px;
             border-radius: 40px;
-            border: 6px solid #ffb6c1;
-            box-shadow: 0 20px 50px rgba(255, 105, 180, 0.4);
+            border: 5px solid #ffb6c1;
+            box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3);
             text-align: center;
-            z-index: 10; /* Карточка выше всех */
+            z-index: 10;
             position: relative;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(8px);
         }
 
         h1 { 
@@ -70,7 +64,7 @@
             font-size: 1.2rem;
             color: #ad1457;
             margin-bottom: 30px;
-            font-weight: 500;
+            font-weight: bold;
         }
 
         .grid {
@@ -87,38 +81,41 @@
             text-align: left;
         }
 
-        .box h3 { margin-top: 0; color: #ff1493; }
+        .box h3 { margin-top: 0; color: #ff1493; display: flex; align-items: center; gap: 8px; }
         
-        .box p { font-size: 1rem; color: #d81b60; line-height: 1.4; }
+        .box p { font-size: 1rem; color: #d81b60; line-height: 1.5; margin: 0; }
 
         .btn {
             display: inline-block;
-            margin-top: 30px;
-            padding: 20px 50px;
+            margin-top: 35px;
+            padding: 22px 60px;
             background: linear-gradient(45deg, #ff69b4, #ff1493);
-            color: white;
+            color: white !important;
             text-decoration: none;
             border-radius: 100px;
             font-size: 1.6rem;
             font-weight: bold;
             transition: 0.3s;
             box-shadow: 0 10px 25px rgba(255, 20, 147, 0.4);
+            border: 3px solid #fff;
         }
 
-        .btn:hover { transform: scale(1.05); }
+        .btn:hover { transform: scale(1.05); box-shadow: 0 15px 35px rgba(255, 20, 147, 0.6); }
 
-        @media (max-width: 900px) {
-            .girl { height: 50vh; opacity: 0.5; } /* На телефонах делаем прозрачнее, чтобы не мешали */
+        .footer { margin-top: 30px; font-size: 0.8rem; color: #ff8da1; font-weight: bold; }
+
+        @media (max-width: 850px) {
+            .girl { display: none; } /* Убираем на мобилках, чтобы не закрывали текст */
             .grid { grid-template-columns: 1fr; }
-            h1 { font-size: 2.2rem; }
+            h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="anime-layer">
-        <img src="https://stickerswiki.ams3.cdn.digitaloceanspaces.com/AnimeGirlsKawaii/1149444.512.webp" class="girl left-girl">
-        <img src="https://stickerswiki.ams3.cdn.digitaloceanspaces.com/AnimeGirlsKawaii/1149448.512.webp" class="girl right-girl">
+    <div class="characters">
+        <img src="https://www.pngarts.com/files/10/Anime-Girl-PNG-Photo.png" class="girl left-side">
+        <img src="https://www.pngarts.com/files/10/Anime-Girl-Download-Transparent-PNG-Image.png" class="girl right-side">
     </div>
 
     <div class="main-card">
@@ -138,7 +135,7 @@
 
         <a href="https://t.me/+WWiyT82gDLs5YzQy" class="btn">💖 ВОЙТИ В КАНАЛ 💖</a>
 
-        <div style="margin-top: 25px; font-size: 0.8rem; color: #ff8da1; font-weight: bold;">
+        <div class="footer">
             CREATED FOR BEDOLAGAS WITH LOVE 💞 2026
         </div>
     </div>
