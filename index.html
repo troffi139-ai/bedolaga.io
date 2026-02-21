@@ -8,8 +8,8 @@
         body {
             margin: 0;
             padding: 0;
-            /* Фон: Розовое облачное небо (классика аниме) */
-            background: url('https://i.pinimg.com/originals/02/76/8a/02768a487900898555e145f492160a03.jpg') no-repeat center center fixed;
+            /* Тот самый розовый фон с ангелами */
+            background: url('https://i.ibb.co/L6m08zV/photo-2026-02-21-12-26-07.jpg') no-repeat center center fixed;
             background-size: cover;
             font-family: 'Segoe UI', Tahoma, sans-serif;
             display: flex;
@@ -19,25 +19,26 @@
             overflow: hidden;
         }
 
-        /* Слой с персонажами, которые стоят по бокам ПОВЕРХ фона */
-        .characters {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
+        /* Затемнение фона для эффекта глубины */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(255, 192, 203, 0.2); 
             z-index: 1;
         }
 
-        .girl {
-            position: absolute;
-            bottom: -20px;
-            height: 80vh;
+        /* Аниме персонажи по бокам */
+        .char {
+            position: fixed;
+            bottom: 0;
+            height: 75vh;
+            z-index: 2;
+            pointer-events: none;
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.5));
         }
-
-        .left-side { left: -50px; }
-        .right-side { right: -50px; transform: scaleX(-1); }
+        .left-char { left: -30px; }
+        .right-char { right: -30px; transform: scaleX(-1); }
 
         .main-card {
             background: rgba(255, 255, 255, 0.9);
@@ -45,7 +46,7 @@
             max-width: 800px;
             padding: 40px;
             border-radius: 40px;
-            border: 5px solid #ffb6c1;
+            border: 6px solid #ffb6c1;
             box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3);
             text-align: center;
             z-index: 10;
@@ -58,13 +59,14 @@
             color: #ff69b4; 
             margin: 0 0 10px 0; 
             text-shadow: 3px 3px 0px #fff;
+            font-weight: bold;
         }
 
         .subtitle {
-            font-size: 1.2rem;
-            color: #ad1457;
+            font-size: 1.3rem;
+            color: #d81b60;
             margin-bottom: 30px;
-            font-weight: bold;
+            font-weight: 500;
         }
 
         .grid {
@@ -81,9 +83,8 @@
             text-align: left;
         }
 
-        .box h3 { margin-top: 0; color: #ff1493; display: flex; align-items: center; gap: 8px; }
-        
-        .box p { font-size: 1rem; color: #d81b60; line-height: 1.5; margin: 0; }
+        .box h3 { margin-top: 0; color: #ff1493; font-size: 1.4rem; display: flex; align-items: center; gap: 8px; }
+        .box p { font-size: 1.05rem; color: #ad1457; line-height: 1.5; margin: 0; }
 
         .btn {
             display: inline-block;
@@ -93,30 +94,28 @@
             color: white !important;
             text-decoration: none;
             border-radius: 100px;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: bold;
             transition: 0.3s;
             box-shadow: 0 10px 25px rgba(255, 20, 147, 0.4);
             border: 3px solid #fff;
         }
 
-        .btn:hover { transform: scale(1.05); box-shadow: 0 15px 35px rgba(255, 20, 147, 0.6); }
+        .btn:hover { transform: scale(1.05); box-shadow: 0 15px 40px rgba(255, 20, 147, 0.6); }
 
-        .footer { margin-top: 30px; font-size: 0.8rem; color: #ff8da1; font-weight: bold; }
+        .footer { margin-top: 30px; font-size: 0.9rem; color: #ff8da1; font-weight: bold; }
 
         @media (max-width: 850px) {
-            .girl { display: none; } /* Убираем на мобилках, чтобы не закрывали текст */
+            .char { display: none; }
             .grid { grid-template-columns: 1fr; }
-            h1 { font-size: 2.5rem; }
+            h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="characters">
-        <img src="https://www.pngarts.com/files/10/Anime-Girl-PNG-Photo.png" class="girl left-side">
-        <img src="https://www.pngarts.com/files/10/Anime-Girl-Download-Transparent-PNG-Image.png" class="girl right-side">
-    </div>
+    <img src="https://www.pngarts.com/files/10/Anime-Girl-PNG-Photo.png" class="char left-char">
+    <img src="https://www.pngarts.com/files/10/Anime-Girl-Download-Transparent-PNG-Image.png" class="char right-char">
 
     <div class="main-card">
         <h1>🌸 BEDOLAGA.IO 🌸</h1>
@@ -133,7 +132,7 @@
             </div>
         </div>
 
-        <a href="https://t.me/+WWiyT82gDLs5YzQy" class="btn">💖 ВОЙТИ В КАНАЛ 💖</a>
+        <a href="https://t.me/+WWiyT82gDLs5YzQy" class="btn">🎀 ВОЙТИ В КАНАЛ 🎀</a>
 
         <div class="footer">
             CREATED FOR BEDOLAGAS WITH LOVE 💞 2026
