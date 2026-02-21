@@ -3,37 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BEDOLAGA.IO | SECURE ACCESS</title>
+    <title>🌸 BEDOLAGA.IO 🌸</title>
     <style>
-        body { background-color: #050505; color: #00ff41; font-family: 'Courier New', Courier, monospace; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
-        .terminal { width: 90%; max-width: 700px; background: rgba(10, 10, 10, 0.95); border: 1px solid #00ff41; box-shadow: 0 0 20px rgba(0, 255, 65, 0.2); padding: 30px; border-radius: 5px; position: relative; }
-        h1 { text-align: center; text-transform: uppercase; letter-spacing: 5px; animation: blink 2s infinite; }
-        h2 { color: #fff; border-bottom: 1px solid #00ff41; display: inline-block; padding-bottom: 5px; font-size: 1.2rem; text-transform: uppercase; }
-        .section { margin-bottom: 40px; }
-        .content-text { line-height: 1.6; color: #adadad; font-size: 0.95rem; }
-        .warning-box { border: 1px dashed #ff0000; padding: 15px; margin-top: 20px; color: #ff4d4d; font-size: 0.85rem; }
-        .access-btn { display: block; width: 100%; padding: 20px; background: transparent; border: 1px solid #00ff41; color: #00ff41; text-align: center; text-decoration: none; font-weight: bold; font-size: 1.2rem; transition: 0.3s; text-transform: uppercase; letter-spacing: 3px; box-sizing: border-box; }
-        .access-btn:hover { background: #00ff41; color: #000; box-shadow: 0 0 30px rgba(0, 255, 65, 0.6); }
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fff0f5; /* Нежно-розовый фон */
+            background-image: radial-gradient(#ffc0cb 1px, transparent 1px);
+            background-size: 20px 20px; /* Узор в горошек */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #d81b60;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(255, 182, 193, 0.5);
+            border: 4px solid #ffb6c1;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            position: relative;
+        }
+
+        .card::before {
+            content: '🌸';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            font-size: 40px;
+        }
+
+        .card::after {
+            content: '✨';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            font-size: 40px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #ff69b4;
+            text-shadow: 2px 2px #fff;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .anime-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #ff69b4;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+        }
+
+        .anime-btn:hover {
+            transform: scale(1.05);
+            background-color: #ff1493;
+            box-shadow: 0 8px 20px rgba(255, 105, 180, 0.6);
+        }
+
+        .hearts {
+            font-size: 20px;
+            margin-top: 20px;
+            color: #ffb6c1;
+        }
     </style>
 </head>
 <body>
-<div class="terminal">
-    <h1>BEDOLAGA.IO</h1>
-    <div class="section">
-        <h2>[ 01. О ПРОЕКТЕ ]</h2>
-        <div class="content-text">
-            <p>> Сервис BEDOLAGA.IO — автоматизированная система. Мы гарантируем полную анонимность: никаких логов и отслеживания IP.</p>
-            <div class="warning-box">
-                МЫ НЕ НЕСЕМ ОТВЕТСТВЕННОСТИ ЗА ВАШИ ДЕЙСТВИЯ. ВСЯ ОТВЕТСТВЕННОСТЬ НА ВАС.
-            </div>
-        </div>
+
+    <div class="card">
+        <h1>BEDOLAGA.IO</h1>
+        
+        <p>Добро пожаловать в наш уютный и безопасный уголок интернета! <br>Здесь тебя ждет атмосфера анонимности и спокойствия. Наслаждайся~</p>
+        
+        <p style="font-size: 0.9rem; color: #ff8da1;">✨ Обратите внимание: Мы не храним ваши данные и гарантируем полную конфиденциальность! ✨</p>
+
+        <a href="https://t.me/ТВОЙ_КАНАЛ" class="anime-btn">💞 Войти в Канал 💞</a>
+        
+        <div class="hearts">💖 🍬 🎀 🍬 💖</div>
     </div>
-    <div class="section">
-        <h2>[ 02. ПЕРЕХОД ]</h2>
-        <p class="content-text" style="margin-bottom: 20px;">Для входа перейдите в официальный канал:</p>
-        <a href="https://t.me/ТВОЙ_КАНАЛ" class="access-btn">ВХОД В КАНАЛ</a>
-    </div>
-</div>
+
 </body>
 </html>
